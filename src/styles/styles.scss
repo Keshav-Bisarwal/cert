@@ -1,0 +1,126 @@
+@import "./mixins";
+
+html,
+body {
+  height: 100%;
+  background-color: #171b1e;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+// mat form field
+.mat-mdc-form-field-error {
+  margin-bottom: 1rem;
+
+  &.mat-mdc-form-field-bottom-align::before {
+    display: none;
+  }
+}
+
+.mat-form-field-invalid .mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label {
+  color: #f44336;
+}
+
+.mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label {
+  color: #00a188;
+}
+
+
+// mat button
+
+.mat-mdc-raised-button.mat-primary:not(:disabled) {
+  background-color: #00a188;
+}
+
+.mat-mdc-raised-button.mdc-button:disabled {
+  background-color: #8e8e93;
+}
+
+.mdc-button.mat-mdc-button:not(:disabled) {
+  background-color: #fff;
+  color: #000;
+  margin: 0.5rem;
+
+  &.selected {
+    background-color: #32abd0;
+  }
+
+  &.correct {
+    background-color: green;
+  }
+
+  &.wrong {
+    background-color: red;
+  }
+
+  &.selected,
+  &.correct,
+  &.wrong {
+    color: #fff;
+  }
+}
+
+// mat-select
+
+.mat-mdc-select-value-text {
+  letter-spacing: normal;
+}
+
+.mdc-menu-surface.mat-mdc-select-panel {
+  background: #000;
+
+  .mat-mdc-option.mdc-list-item--selected:not(.mat-mdc-option-multiple):not(.mdc-list-item--disabled),
+  .mat-mdc-autocomplete-panel .mat-mdc-option.mat-mdc-option-active,
+  .mat-mdc-list-item.mat-mdc-list-option {
+    background: #31363c;
+
+    &:hover {
+      background: #31363c;
+    }
+  }
+
+  .mat-mdc-option:hover:not(.mdc-list-item--disabled),
+  .mat-mdc-option:focus:not(.mdc-list-item--disabled),
+  .mat-mdc-option.mat-mdc-option-active,
+  .mat-mdc-option.mdc-list-item--selected:not(.mat-mdc-option-multiple):not(.mdc-list-item--disabled) {
+    background: #31363c;
+    color: #00a188;
+  }
+
+  .mat-mdc-option.mdc-list-item--selected:not(.mdc-list-item--disabled) .mdc-list-item__primary-text {
+    color: #00a188;
+  }
+}
+
+.mat-primary .mat-pseudo-checkbox-checked.mat-pseudo-checkbox-minimal::after,
+.mat-primary .mat-pseudo-checkbox-indeterminate.mat-pseudo-checkbox-minimal::after {
+  color: #00a188;
+}
+
+
+.error-div {
+  padding: 0;
+  font-size: 0.9rem;
+  color: #f44336;
+  font-size: 0.9rem;
+  margin-top: 0.1rem;
+  margin-left: 0.1rem;
+}
+
+h1,
+h2 {
+  color: #fff;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.container {
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 2rem;
+}

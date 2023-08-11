@@ -1,0 +1,7 @@
+.mat-mdc-form-field {
+  width: 25rem;
+
+  &:not(:last-child) {
+    margin-right: 1rem;
+  }
+}

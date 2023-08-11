@@ -1,0 +1,27 @@
+ul {
+  list-style: none;
+}
+
+.question {
+  margin-bottom: 1rem;
+}
+
+.scorecard {
+  margin: 2rem 0;
+  padding: 1rem;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+
+  &.poor {
+    background: #f44336;
+  }
+
+  &.good {
+    background: yellow;
+  }
+
+  &.excellent {
+    background: #00a188;
+  }
+}

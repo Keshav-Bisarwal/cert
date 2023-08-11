@@ -1,0 +1,5 @@
+<div class="container">
+  <h1 class="text-center">QUIZ MAKER</h1>
+  <app-category-selection (formSubmit)="createQuiz($event)"></app-category-selection>
+  <app-question *ngIf="questions.length > 0" [questions]="questions"></app-question>
+</div>

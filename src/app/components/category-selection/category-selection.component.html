@@ -1,0 +1,33 @@
+<form (ngSubmit)="submit(quizForm)" #quizForm="ngForm" class="text-center">
+  <!-- Category Dropdown -->
+  <mat-form-field>
+    <mat-label for="category">Select a Category</mat-label>
+    <mat-select [(ngModel)]="selectedCategory" name="category" id="categorySelect" #category="ngModel" required>
+      <mat-option *ngFor="let category of categories$ | async" [value]="category.id" [id]="category.name">
+        {{ category.name }}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="category.touched && category.invalid">
+      <div class="error-div">❌ Category is required</div>
+    </mat-error>
+  </mat-form-field>
+
+  <!-- Difficulty Level Dropdown -->
+  <mat-form-field>
+    <mat-label for="difficulty">Select difficulty</mat-label>
+    <mat-select [(ngModel)]="selectedDifficulty" name="difficulty" id="difficultySelect" #difficulty="ngModel" required>
+      <mat-option *ngFor="let difficultyLevel of difficultyLevels" [value]="difficultyLevel.id"
+        [id]="difficultyLevel.id">
+        {{ difficultyLevel.name }}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="difficulty.touched && difficulty.invalid">
+      <div class="error-div">❌ Difficulty level is required</div>
+    </mat-error>
+  </mat-form-field>
+
+  <!-- Create quiz button -->
+  <button mat-raised-button color="primary" type="submit" id="createBtn" [disabled]="quizForm.invalid">
+    Create
+  </button>
+</form>

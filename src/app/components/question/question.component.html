@@ -1,0 +1,34 @@
+<!-- Questionnaire -->
+
+<div *ngFor="let question of questions; let i = index" class="question">
+  <h2 [innerHTML]="question.question"></h2>
+  <ng-container *ngFor="let option of question.options">
+    <button mat-button (click)="addResponse(option, i)" [ngClass]="{
+        selected: !isResultsPage && option === question.answer,
+        correct:
+          isResultsPage &&
+          (option === question.answer || option === question.correct_answer),
+        wrong:
+          isResultsPage &&
+          option === question.answer &&
+          option !== question.correct_answer
+      }">
+      {{ option }}
+    </button>
+  </ng-container>
+</div>
+
+
+<!-- Quiz score -->
+
+<div class="scorecard text-center" *ngIf="isResultsPage" appScoreBoardHighlight [score]="score">
+  You scored {{ score }} out of {{ questions.length }}
+</div>
+
+<!-- Submit button -->
+
+<div class="btn-container text-center" *ngIf="attemptedQuestions.length === questionsCount || isResultsPage">
+  <button mat-raised-button color="primary" id="submitQuizBtn" (click)="submit()">
+    {{ isResultsPage ? "Create a new quiz" : "Submit" }}
+  </button>
+</div>
